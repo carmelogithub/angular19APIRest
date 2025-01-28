@@ -7,8 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 private baseUrl = 'https://jsonplaceholder.typicode.com';
+private baseUrl2 = 'https://dummyjson.com';
   constructor(private http:HttpClient) { }
   getPosts():Observable<any[]>{
     return this.http.get<any[]>(`${this.baseUrl}/posts`);
+  }
+  getPhotos():Observable<any[]>{
+    return this.http.get<any[]>(`${this.baseUrl2}/products`);
   }
 }
